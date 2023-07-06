@@ -10,7 +10,7 @@ CORS(app)
 api = Api(app, f"/{os.getenv('RAILWAY_SERVICE_NAME', default='thisapi')}/v1")
 
 # Configure swagger
-SWAGGER_URL = f"/python-template/v1/docs"
+SWAGGER_URL = f"/{os.getenv('RAILWAY_SERVICE_NAME', default='thisapi')}/v1/docs"
 API_URL = '/swagger.json'
 swaggerui_blueprint = get_swaggerui_blueprint(
     SWAGGER_URL,
