@@ -9,7 +9,7 @@ class HealthCheckTestCase(unittest.TestCase):
     def test_health_check(self):
         response = self.app.get('/thisapi/v1/health')
         data = response.get_json()
-        expected = {"message": "All systems go!."}
+        expected = {"message": "All systems go."}
         self.assertEqual(response.status_code, 200)
         self.assertEqual(data, expected)
 
