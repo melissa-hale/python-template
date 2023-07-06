@@ -1,26 +1,47 @@
 {
-    "swagger": "2.0",
-    "info": {
-      "title": "template API",
-      "description": "Swagger UI for the base template",
-      "version": "1.0.0"
+  "swagger": "2.0",
+  "info": {
+    "title": "template API",
+    "description": "Swagger UI for the base template",
+    "version": "1.0.0"
+  },
+  "basePath": "/thisapi",
+  "paths": {
+    "/health": {
+      "get": {
+        "summary": "Health Check Endpoint",
+        "responses": {
+          "200": {
+            "description": "Health Check Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     },
-    "basePath": "/thisapi",
-    "paths": {
-      "/health": {
-        "get": {
-          "summary": "Health Check Endpoint",
-          "responses": {
-            "200": {
-              "description": "Health Check Successful",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "type": "object",
-                    "properties": {
-                      "message": {
-                        "type": "string"
-                      }
+    "/envars": {
+      "get": {
+        "summary": "Easily view list of env vars accessible to service",
+        "responses": {
+          "200": {
+            "description": "Successful retrieval of env vars",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "object"
                     }
                   }
                 }
@@ -31,3 +52,4 @@
       }
     }
   }
+}

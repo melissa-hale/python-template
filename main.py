@@ -30,8 +30,16 @@ def swagger():
 class HealthCheck(Resource):
     def get(self):
         return jsonify({"message": "All systems go."})
+    
+class GetEnvVars(Resource):
+    def get(self):
+        envs = {}
+        for name, val in os.environ.items():
+            envs[name] = val
+        return jsonify({"message": envs})
 # add endpoint to API
 api.add_resource(HealthCheck, '/health')
+api.add_resource(GetEnvVars, '/envars')
 
 if __name__ == '__main__':
     app.run(debug=True, port=os.getenv("PORT", default=5000))
