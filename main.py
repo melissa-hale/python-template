@@ -7,10 +7,10 @@ import json
 
 app = Flask(__name__)
 CORS(app)
-api = Api(app, '/thisapi')
+api = Api(app, f"/{os.getenv('RAILWAY_SERVICE_NAME', default='thisapi')}/v1")
 
 # Configure swagger
-SWAGGER_URL = '/thisapi/docs'
+SWAGGER_URL = f"/python-template/v1/docs"
 API_URL = '/swagger.json'
 swaggerui_blueprint = get_swaggerui_blueprint(
     SWAGGER_URL,

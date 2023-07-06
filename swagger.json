@@ -5,7 +5,7 @@
     "description": "Swagger UI for the base template",
     "version": "1.0.0"
   },
-  "basePath": "/thisapi",
+  "basePath": "/python-template/v1",
   "paths": {
     "/health": {
       "get": {
