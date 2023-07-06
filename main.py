@@ -11,7 +11,7 @@ api = Api(app, '/thisapi')
 
 # Configure swagger
 SWAGGER_URL = '/thisapi/docs'
-API_URL = f'http://0.0.0.0:{os.getenv("PORT", default=5000)}/swagger.json'
+API_URL = '/swagger.json'
 swaggerui_blueprint = get_swaggerui_blueprint(
     SWAGGER_URL,
     API_URL,
